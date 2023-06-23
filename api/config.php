@@ -1,5 +1,12 @@
 <?php
 
+    // Start the session
+    session_start();
+
+    // Prevent CORS policy errors
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Headers: *');
+
     $servername = "localhost";
     $username = "root";
     $password = "";

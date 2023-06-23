@@ -7,28 +7,7 @@
     <!--Bootstrap  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <!-- Custom CSS -->
-    <style>
-        .gradient-custom-3 {
-            /* fallback for old browsers */
-            background: #84fab0;
-
-            /* Chrome 10-25, Safari 5.1-6 */
-            background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
-
-            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
-        }
-        .gradient-custom-4 {
-            /* fallback for old browsers */
-            background: #84fab0;
-
-            /* Chrome 10-25, Safari 5.1-6 */
-            background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
-
-            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
@@ -107,50 +86,6 @@
     <!-- Bootstrap Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <!-- API Script -->
-    <script>
-        const endpoint = "http://localhost/kodego/activity/6-23-2023-group/PHP-MYSQL/api/";
-
-        // Handle Form
-        const registrationForm = document.querySelector("#registrationForm");
-        registrationForm.addEventListener("submit", (e)=>{
-            e.preventDefault();
-
-            const firstname = document.getElementById("firstname").value;
-            const lastname = document.getElementById("lastname").value;
-            const email = document.getElementById("email").value;
-            const birthdate = document.getElementById("birthdate").value;
-            const password = document.getElementById("password").value;
-            const confirm_password = document.getElementById("confirm_password").value;
-
-            if (password === confirm_password) {
-                fetch(endpoint + "register.php", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    firstname: firstname,
-                    lastname: lastname,
-                    email: email,
-                    birthdate: birthdate,
-                    password: password,
-                }),
-                })
-                .then((response) => response.json())
-                .then((data) => {
-                    if (data.success) {
-                        alert(data.message);
-                        window.location.replace("login.html");
-                    } else {
-                        alert(data.message);
-                    }
-                })
-            } else {
-                alert("Passwords do not match!");
-            }
-
-        });
-
-    </script>
+    <script src="api.js"></script>
 </body>
 </html>

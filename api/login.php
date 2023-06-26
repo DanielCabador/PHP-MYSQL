@@ -16,12 +16,22 @@
         if ($result->num_rows === 1) {
             $row = $result->fetch_assoc();
             $hashedPassword = $row['password'];
+            $user_id = $row['id'];
+            $email = $row['email'];
+            $firstname = $row['firstname'];
+            $lastname = $row['lastname'];
+            $birthdate = $row ['birthdate'];
 
             // Verify the password
             if (password_verify($password, $hashedPassword)) {
                 $response = array(
                     'success' => true,
-                    'message' => 'Login successful.'
+                    'message' => 'Login successful.',
+                    'user_id' =>  $user_id,
+                    'email' => $email,
+                    'firstname' => $firstname,
+                    'lastname' => $lastname,
+                    'birthdate' => $birthdate,
                 );
                 echo json_encode($response);
             } else {

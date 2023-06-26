@@ -2,7 +2,10 @@
 
     include "config.php";
 
-    $sql = "SELECT * FROM tweets JOIN users ON users.id = tweets.user_id ORDER BY tweets.date_tweeted DESC";
+    $sql = "SELECT tweets.id AS tweet_id, tweets.content, users.firstname, users.lastname, tweets.user_id
+    FROM tweets
+    JOIN users ON users.id = tweets.user_id
+    ORDER BY tweets.date_tweeted DESC";
 
     $results = $conn->query($sql);
 
@@ -12,8 +15,9 @@
 
         while($row = $results->fetch_assoc()){
             $todo = array(
-                'id' => $row['id'],
+                'tweet_id' => $row['tweet_id'],
                 'content' => $row['content'],
+                'user_id' => $row['user_id'],
                 'firstname' => $row['firstname'],
                 'lastname' => $row['lastname'],
             );

@@ -6,7 +6,7 @@ include "config.php";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);
 
-    $id = $data['id'];
+    $id = $data['tweet_id'];
     $user_id = $data['user_id'];
 
     //Check if the tweet belongs to the user

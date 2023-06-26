@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2023 at 04:17 PM
+-- Generation Time: Jun 26, 2023 at 09:50 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -34,6 +34,15 @@ CREATE TABLE `tweets` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tweets`
+--
+
+INSERT INTO `tweets` (`id`, `content`, `date_tweeted`, `user_id`) VALUES
+(8, 'hi test', '2023-06-26 13:35:43', 9),
+(13, 'Hi', '2023-06-26 15:04:58', 9),
+(17, 'Good Morning, this is a test tweet.', '2023-06-26 19:16:45', 3);
+
 -- --------------------------------------------------------
 
 --
@@ -54,7 +63,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `birthdate`, `password`) VALUES
-(3, 'Josephene', 'Jimenez', 'jjosephene99@gmail.com', '2222-02-22', '$2y$10$JG.Su7T9VKeE2B3aItPTo.pjlj3.h4LdU0rsNSodUwUNSqnfXYOXK'),
+(3, 'Josephene', 'J', 'jjosephene99@gmail.com', '2222-02-22', '$2y$10$LdcF/GQ6R0cJroVj2H8QsekbZzMEpFJDGIz7.vMvHV7JYYZhko4SC'),
 (4, 'John', 'Doe', 'example@example.com', '1990-01-01', '$2y$10$4prMXYhXZHwT0t9h75Yb8er2ckoo8tKT42SLyNWGxB5nTtXWYkFQ2'),
 (8, 'as', 'das', 'asda@example.com', '2222-02-22', '$2y$10$lkGtCb2/6rK8yHJqOqOubemQ7Xx5srygJZzFLMRkQrItFQAwVe1Ly'),
 (9, 'John', 'Cena', 'cenajohn@example.com', '1990-01-01', '$2y$10$ROUbWjR4MbrTdZKjuh8fROf5.RdfHuijJ6Ch2yascH2tANzS511uW');
@@ -84,7 +93,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `tweets`
 --
 ALTER TABLE `tweets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `users`
